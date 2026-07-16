@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | Book a Meet-and-Greet | Seattle Sensitive Dogs</title>
+  <meta name="description" content="Get in touch with Seattle Sensitive Dogs. Text 206-657-7315 or send the form to book a low-key meet-and-greet for your fearful or reactive dog in North Seattle.">
+
+  <!-- Favicons -->
+  <link rel="icon" href="./favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="./images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32.png">
+
+  <!-- Fonts: Cormorant Garamond (display) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;600&display=swap">
+
+  <link rel="stylesheet" href="./css/styles.css">
+
+  <!-- SEO -->
+  <link rel="canonical" href="https://seattlesensitivedogs.com/contact.html">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Seattle Sensitive Dogs">
+  <meta property="og:title" content="Contact &amp; Book a Meet-and-Greet | Seattle Sensitive Dogs">
+  <meta property="og:description" content="Text 206-657-7315 or send a message to start with a $35 Mellow Meet-and-Greet. Force-free dog walking for sensitive dogs in North Seattle.">
+  <meta property="og:url" content="https://seattlesensitivedogs.com/contact.html">
+  <meta property="og:image" content="https://seattlesensitivedogs.com/images/og-thumbnail-512.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact &amp; Book a Meet-and-Greet | Seattle Sensitive Dogs">
+  <meta name="twitter:description" content="Text 206-657-7315 or send a message to book a $35 Mellow Meet-and-Greet in North Seattle.">
+  <meta name="twitter:image" content="https://seattlesensitivedogs.com/images/og-thumbnail-512.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "url": "https://seattlesensitivedogs.com/contact.html",
+    "mainEntity": {
+      "@id": "https://seattlesensitivedogs.com/#business",
+      "@type": "LocalBusiness",
+      "name": "Seattle Sensitive Dogs",
+      "telephone": "+1-206-657-7315",
+      "email": "info@seattlesensitivedogs.com"
+    }
+  }
+  </script>
+  <!-- /SEO -->
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ================================================================
+       SITE HEADER — shared shell. Copy this whole <header> verbatim
+       into every page. The ONLY per-page change: move class "is-active"
+       and aria-current="page" to the link for the current page.
+       BOOKING_URL: currently contact page; swap all .js-booking-cta
+       hrefs when Stripe link exists.
+  ================================================================= -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="./index.html" aria-label="Seattle Sensitive Dogs — home">
+        <img class="brand__mark" src="./images/logo-mark.svg" alt="" width="44" height="43">
+        <span class="brand__name">Seattle <em>Sensitive</em> Dogs</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+        <span class="visually-hidden">Menu</span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul class="site-nav__list">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./services.html">Services &amp; Pricing</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./faq.html">FAQ</a></li>
+          <li><a href="./contact.html" class="is-active" aria-current="page">Contact</a></li>
+        </ul>
+        <a class="btn btn-primary site-nav__cta js-booking-cta" href="./contact.html">Book a Meet-and-Greet</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================================================
+         INTERIOR HERO
+    ============================================================= -->
+    <section class="page-hero">
+      <div class="container">
+        <h1>Say hello.</h1>
+        <p class="lede">The fastest way to reach me is a text. Tell me your dog&rsquo;s name, their breed or mix, and what&rsquo;s made walks hard before &mdash; no need to make it sound better than it is. I&rsquo;ve heard it all, and I promise there&rsquo;s no judgment here.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TWO-PATH: text-first note (rail) + Formspree form (main)
+    ============================================================= -->
+    <section class="section">
+      <div class="container split">
+
+        <div class="split__rail">
+          <div class="contact-channels">
+            <div class="contact-channel">
+              <p class="contact-channel__label">Text (fastest response)</p>
+              <p class="contact-channel__value"><a href="tel:+12066577315">206-657-7315</a></p>
+              <p class="contact-channel__hint">A quick text is the surest way to reach me.</p>
+            </div>
+            <div class="contact-channel">
+              <p class="contact-channel__label">Email</p>
+              <p class="contact-channel__value"><a href="mailto:info@seattlesensitivedogs.com">info@seattlesensitivedogs.com</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <form class="form js-contact-form" action="https://formspree.io/f/mwvgvnjo" method="POST">
+            <div class="form__row form__row--2col">
+              <div class="form__field">
+                <label for="name">Your name</label>
+                <input type="text" id="name" name="name" autocomplete="name" required>
+              </div>
+              <div class="form__field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+              </div>
+            </div>
+
+            <div class="form__row form__row--2col">
+              <div class="form__field">
+                <label for="dog_name">Dog&rsquo;s name</label>
+                <input type="text" id="dog_name" name="dog_name">
+              </div>
+              <div class="form__field">
+                <label for="breed">Breed / mix</label>
+                <input type="text" id="breed" name="breed">
+              </div>
+            </div>
+
+            <div class="form__field">
+              <label for="neighborhood">Neighborhood</label>
+              <select id="neighborhood" name="neighborhood">
+                <option value="Maple Leaf">Maple Leaf</option>
+                <option value="Roosevelt">Roosevelt</option>
+                <option value="Wedgwood">Wedgwood</option>
+                <option value="Ravenna">Ravenna</option>
+                <option value="Fremont">Fremont</option>
+                <option value="Wallingford">Wallingford</option>
+                <option value="Other / not sure">Other / not sure</option>
+              </select>
+            </div>
+
+            <div class="form__field">
+              <label for="message">What&rsquo;s made walks hard before?</label>
+              <textarea id="message" name="message"></textarea>
+            </div>
+
+            <!-- Honeypot: hidden from people, catches bots. Formspree reads _gotcha. -->
+            <div class="hp-field" aria-hidden="true">
+              <label for="_gotcha">Leave this field empty</label>
+              <input type="text" id="_gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+            </div>
+
+            <p class="form__status" role="status" aria-live="polite" hidden></p>
+
+            <noscript>
+              <p class="field-hint">This form works without JavaScript too &mdash; when you press Send, it submits directly and you&rsquo;ll see a confirmation page.</p>
+            </noscript>
+
+            <button class="btn btn-primary" type="submit">Send</button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SERVICE-AREA RECAP
+    ============================================================= -->
+    <section class="section section--tight surface-cream">
+      <div class="container area-strip">
+        <h2>Serving North Seattle</h2>
+        <ul class="area-strip__list">
+          <li>Maple Leaf</li>
+          <li>Roosevelt</li>
+          <li>Wedgwood</li>
+          <li>Ravenna</li>
+          <li>Fremont</li>
+          <li>Wallingford</li>
+        </ul>
+        <p class="area-strip__note">Seattle, WA 98115</p>
+        <!-- DRAFT-REVIEW: response-time expectation — Lily to confirm. -->
+        <p class="area-strip__note">I reply to everything within one business day &mdash; usually much faster.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================================
+       SITE FOOTER — shared shell. Copy this whole <footer> verbatim
+       into every page (no per-page changes needed).
+  ================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <img src="./images/logo-white.svg" alt="Seattle Sensitive Dogs" width="136" height="145">
+          <p class="site-footer__tagline">Trust builds at their pace.</p>
+        </div>
+        <nav class="site-footer__nav" aria-label="Footer">
+          <h2>Explore</h2>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./services.html">Services &amp; Pricing</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./faq.html">FAQ</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="site-footer__contact">
+          <h2>Get in touch</h2>
+          <p>Text <a href="tel:+12066577315">206-657-7315</a></p>
+          <p><a href="mailto:info@seattlesensitivedogs.com">info@seattlesensitivedogs.com</a></p>
+          <p class="site-footer__areas">Serving North Seattle:<br>Maple Leaf · Roosevelt · Wedgwood · Ravenna · Fremont · Wallingford</p>
+        </div>
+      </div>
+      <div class="site-footer__legal">
+        <p class="site-footer__honesty">Owner-operated. Every walk is walked by me, Lily &mdash; never a contractor.</p>
+        <p>&copy; <span class="js-year">2026</span> Seattle Sensitive Dogs</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>

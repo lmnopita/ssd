@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page Not Found | Seattle Sensitive Dogs</title>
+  <meta name="description" content="That page wandered off. Head back home to Seattle Sensitive Dogs — force-free walks for fearful and reactive dogs in North Seattle.">
+  <meta name="robots" content="noindex">
+
+  <!-- ================================================================
+       404 PATHS: GitHub Pages serves /404.html for missing URLs at ANY
+       depth, so this page ALONE uses ROOT-RELATIVE paths (/…) for every
+       asset and link. All other pages use ./relative paths — only this
+       file differs, so assets resolve no matter what URL triggered it.
+  ================================================================= -->
+
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+
+  <!-- Fonts: Cormorant Garamond (display) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;600&display=swap">
+
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- SEO: this page is intentionally noindex (set via the robots meta above); no canonical or structured data. -->
+  <meta property="og:title" content="Page Not Found | Seattle Sensitive Dogs">
+  <meta property="og:site_name" content="Seattle Sensitive Dogs">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ================================================================
+       SITE HEADER — shared shell (root-relative paths on 404 only; see
+       note in <head>). No nav link is active on the 404 page.
+  ================================================================= -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="/index.html" aria-label="Seattle Sensitive Dogs — home">
+        <img class="brand__mark" src="/images/logo-mark.svg" alt="" width="44" height="43">
+        <span class="brand__name">Seattle <em>Sensitive</em> Dogs</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+        <span class="visually-hidden">Menu</span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+        <span class="nav-toggle__bar" aria-hidden="true"></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul class="site-nav__list">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/services.html">Services &amp; Pricing</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/faq.html">FAQ</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+        <a class="btn btn-primary site-nav__cta js-booking-cta" href="/contact.html">Book a Meet-and-Greet</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="error-page">
+    <div class="container error-page__inner">
+      <p class="error-page__code">404</p>
+      <h1>This path wandered off.</h1>
+      <p>Even the best walks take a wrong turn sometimes. Let&rsquo;s head back.</p>
+      <a class="btn btn-primary btn--lg" href="/index.html">Go home <span class="arrow" aria-hidden="true">&rarr;</span></a>
+    </div>
+  </main>
+
+  <!-- ================================================================
+       SITE FOOTER — shared shell (root-relative paths on 404 only).
+  ================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand">
+          <img src="/images/logo-white.svg" alt="Seattle Sensitive Dogs" width="136" height="145">
+          <p class="site-footer__tagline">Trust builds at their pace.</p>
+        </div>
+        <nav class="site-footer__nav" aria-label="Footer">
+          <h2>Explore</h2>
+          <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/services.html">Services &amp; Pricing</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/faq.html">FAQ</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="site-footer__contact">
+          <h2>Get in touch</h2>
+          <p>Text <a href="tel:+12066577315">206-657-7315</a></p>
+          <p><a href="mailto:info@seattlesensitivedogs.com">info@seattlesensitivedogs.com</a></p>
+          <p class="site-footer__areas">Serving North Seattle:<br>Maple Leaf · Roosevelt · Wedgwood · Ravenna · Fremont · Wallingford</p>
+        </div>
+      </div>
+      <div class="site-footer__legal">
+        <p class="site-footer__honesty">Owner-operated. Every walk is walked by me, Lily &mdash; never a contractor.</p>
+        <p>&copy; <span class="js-year">2026</span> Seattle Sensitive Dogs</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

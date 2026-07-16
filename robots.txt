@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# AI answer engines are welcome — see /llms.txt for a plain-language summary.
+Sitemap: https://seattlesensitivedogs.com/sitemap.xml
