@@ -232,4 +232,57 @@
       }
     });
   }
+
+  /* ------------------------------------------------------------------
+     6. Paw trail — a dog walks down the page beside you as you scroll.
+     Purely decorative: built in JS so it never ships to users who have
+     reduced motion on, or to narrow screens with no margin to spare.
+     Paws alternate left/right like a real gait and step in as you pass.
+  ------------------------------------------------------------------ */
+  (function pawTrail() {
+    if (prefersReducedMotion) return;
+    if (!window.matchMedia || !window.matchMedia("(min-width: 86em)").matches) return;
+
+    var PAW = "M6.9 1.2c.9 0 1.6 1 1.6 2.2S7.8 5.6 6.9 5.6 5.3 4.6 5.3 3.4 6 1.2 6.9 1.2zm4.2 0c.9 0 1.6 1 1.6 2.2s-.7 2.2-1.6 2.2-1.6-1-1.6-2.2.7-2.2 1.6-2.2zM3.2 4.6c.8 0 1.5.9 1.5 2s-.7 2-1.5 2-1.5-.9-1.5-2 .7-2 1.5-2zm11.6 0c.8 0 1.5.9 1.5 2s-.7 2-1.5 2-1.5-.9-1.5-2 .7-2 1.5-2zM9 7.1c2.2 0 4 1.8 4 4 0 1.6-1.1 2.6-2.6 2.6-.6 0-1-.2-1.4-.2s-.8.2-1.4.2C6.1 13.7 5 12.7 5 11.1c0-2.2 1.8-4 4-4z";
+
+    var trail = document.createElement("div");
+    trail.className = "paw-trail";
+    trail.setAttribute("aria-hidden", "true");
+
+    var docHeight = document.body.scrollHeight;
+    var count = Math.max(8, Math.min(40, Math.round(docHeight / 260)));
+    var paws = [];
+
+    for (var i = 0; i < count; i++) {
+      var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      svg.setAttribute("viewBox", "0 0 18 15");
+      svg.setAttribute("class", "paw-trail__paw");
+      var p = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      p.setAttribute("d", PAW);
+      svg.appendChild(p);
+      // natural gait: alternate side to side, with a slight rotation
+      svg.style.top = ((i + 0.5) / count * 100) + "vh";
+      svg.style.left = (i % 2 === 0 ? 0 : 14) + "px";
+      svg.style.transform += " rotate(" + (i % 2 === 0 ? -12 : 12) + "deg)";
+      trail.appendChild(svg);
+      paws.push(svg);
+    }
+    document.body.appendChild(trail);
+
+    // Step the paws in based on how far down the page you are.
+    var ticking = false;
+    function step() {
+      var max = document.body.scrollHeight - window.innerHeight;
+      var pct = max > 0 ? window.scrollY / max : 0;
+      var walked = Math.round(pct * paws.length);
+      for (var i = 0; i < paws.length; i++) {
+        paws[i].classList.toggle("is-stepped", i < walked);
+      }
+      ticking = false;
+    }
+    window.addEventListener("scroll", function () {
+      if (!ticking) { window.requestAnimationFrame(step); ticking = true; }
+    }, { passive: true });
+    step();
+  })();
 })();

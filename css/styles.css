@@ -74,7 +74,10 @@
 
   /* Type */
   --font-display: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
-  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  /* Body: Atkinson Hyperlegible Next — designed by the Braille Institute for maximum
+     legibility. Replaces the brand kit's auto-assigned Inter (never Lily's choice;
+     see pairing.json userOverrides.body=false). Cormorant Garamond is Lily's own pick. */
+  --font-body: "Atkinson Hyperlegible Next", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   /* Fluid modular scale (~1.28 ratio at desktop) */
   --text-xs:   0.8125rem;                             /* 13px labels          */
@@ -268,7 +271,7 @@ p { text-wrap: pretty; }
 /* --------------------------------------------------------------------------
    4. BUTTONS
    --------------------------------------------------------------------------
-   .btn            base (pill, Inter 600)
+   .btn            base (pill, body font 600)
    .btn-primary    terracotta fill, white text — the one warm action
    .btn-outline    forest hairline, quiet secondary
    .btn-light      for dark (forest) surfaces: cream fill, forest text
@@ -1136,3 +1139,105 @@ p { text-wrap: pretty; }
 /* Footer credential badges (populated as certifications are earned) */
 .footer-badges { display: flex; flex-wrap: wrap; gap: var(--space-m); align-items: center; list-style: none; padding: 0; margin: var(--space-m) 0 0; }
 .footer-badges img { height: 48px; width: auto; opacity: 0.95; }
+
+/* --------------------------------------------------------------------------
+   20. PAW TRAIL — a dog walks down the page beside you as you scroll.
+   Desktop only (needs margin room), decorative, reduced-motion safe.
+   Paws are laid out in a natural alternating gait and fade in as the
+   scroll position passes them. Hidden entirely if motion is reduced.
+   -------------------------------------------------------------------------- */
+.paw-trail {
+  position: fixed;
+  top: 0;
+  /* Sits in the gutter beside the 71.25rem container — never overlaps content. */
+  left: max(0.75rem, calc((100vw - 71.25rem) / 2 - 3.25rem));
+  height: 100vh;
+  width: 2.5rem;
+  pointer-events: none;
+  z-index: 1;
+  display: none;
+}
+@media (min-width: 86em) and (prefers-reduced-motion: no-preference) {
+  .paw-trail { display: block; }
+}
+.paw-trail__paw {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  fill: var(--sage);
+  opacity: 0;
+  transform: translateY(6px) scale(0.85);
+  transition: opacity 420ms var(--ease-out), transform 420ms var(--ease-out);
+}
+.paw-trail__paw.is-stepped { opacity: 0.42; transform: translateY(0) scale(1); }
+
+/* --------------------------------------------------------------------------
+   21. WALK NOTE — a sample of the note + map Lily sends after every walk.
+   This is the proof behind the "A note and map" promise: the single thing
+   no competitor offers. Styled like a real note card, clearly labelled a sample.
+   -------------------------------------------------------------------------- */
+.walk-note {
+  background: var(--surface);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-m);
+  padding: var(--space-l);
+  display: grid;
+  gap: var(--space-m);
+  position: relative;
+  margin: 0;
+}
+.walk-note__tag {
+  position: absolute;
+  top: calc(-1 * var(--space-s));
+  right: var(--space-m);
+  background: var(--forest);
+  color: var(--bg);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.3em 0.85em;
+  border-radius: var(--radius-pill);
+}
+.walk-note__head { display: grid; gap: 0.15rem; }
+.walk-note__dog {
+  font-family: var(--font-display);
+  font-size: var(--text-h3);
+  font-weight: 600;
+  line-height: 1.1;
+}
+.walk-note__meta { font-size: var(--text-sm); color: var(--ink-soft); }
+
+/* Photo strip — placeholders until real photos land in images/dogs/ */
+.walk-note__shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-xs); }
+.walk-note__shot {
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-s);
+  background: var(--mist-tint);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+/* Real photos fill the frame. */
+.walk-note__shot img { width: 100%; height: 100%; object-fit: cover; }
+/* Placeholder state: a quiet mark, not a billboard. Remove this modifier
+   from the HTML when a real photo from images/dogs/ goes in. */
+.walk-note__shot--placeholder img { width: 44%; height: auto; object-fit: contain; opacity: 0.32; }
+
+.walk-note__body p { font-size: var(--text-sm); line-height: 1.65; }
+.walk-note__body p + p { margin-top: var(--space-xs); }
+
+.walk-note__tags { display: flex; flex-wrap: wrap; gap: 0.4rem; list-style: none; padding: 0; margin: 0; }
+.walk-note__tags li {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--forest);
+  background: var(--cream);
+  border-radius: var(--radius-pill);
+  padding: 0.28em 0.75em;
+}
+.walk-note__map { border-radius: var(--radius-s); overflow: hidden; background: var(--mist-tint); }
+.walk-note__map svg { width: 100%; height: auto; display: block; }
+.walk-note__sign { font-size: var(--text-sm); color: var(--ink-soft); }
+.walk-note__sign em { font-family: var(--font-display); font-size: var(--text-h4); font-style: italic; color: var(--ink); }

@@ -11,10 +11,10 @@
   <link rel="icon" type="image/svg+xml" href="./images/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32.png">
 
-  <!-- Fonts: Cormorant Garamond (display) + Inter (body) -->
+  <!-- Fonts: Cormorant Garamond (display, Lily's pick) + Atkinson Hyperlegible Next (body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,400..700;1,400..700&family=Cormorant+Garamond:ital,wght@0,400..700;1,400..700&display=swap">
 
   <link rel="stylesheet" href="./css/styles.css">
 
@@ -224,6 +224,83 @@
           </article>
         </div>
       </div>
+    </section>
+
+    <!-- ============================================================
+         SAMPLE WALK NOTE — the proof behind "A note and map".
+         Clearly labelled a SAMPLE. No real client data: "Juniper" is an
+         example dog, not a client. Do not present this as a testimonial.
+         PHOTO-SLOT: swap the .walk-note__shot placeholders for real photos
+         from images/dogs/ when they arrive.
+    ============================================================= -->
+    <section class="section section--divided surface-cream">
+      <div class="container split">
+        <div class="split__rail">
+          <h2>What lands in your inbox</h2>
+          <p class="flourish" style="margin-top: var(--space-m)">After every single walk.</p>
+        </div>
+        <div class="reveal">
+          <figure class="walk-note">
+            <figcaption class="walk-note__tag">Sample note</figcaption>
+
+            <div class="walk-note__head">
+              <p class="walk-note__dog">Juniper</p>
+              <p class="walk-note__meta">Tuesday, 2:15pm &middot; 35 minutes &middot; Maple Leaf</p>
+            </div>
+
+            <div class="walk-note__shots" aria-hidden="true">
+              <div class="walk-note__shot walk-note__shot--placeholder"><img src="./images/logo-mark.svg" alt=""></div>
+              <div class="walk-note__shot walk-note__shot--placeholder"><img src="./images/logo-mark.svg" alt=""></div>
+              <div class="walk-note__shot walk-note__shot--placeholder"><img src="./images/logo-mark.svg" alt=""></div>
+            </div>
+
+            <div class="walk-note__body">
+              <p>Juniper met me at the door without the usual freeze today, which is a first. We took the quiet loop behind the reservoir and worked on loose-leash past the school fence, staying about fifteen feet off the sidewalk when the kids came out.</p>
+              <p>One skateboard at the corner. She noticed it, looked back at me, and we carried on. She settled within a few steps. She also sniffed one fence post for a solid two minutes and I let her have it; that is her decompressing, and it is worth more than the distance we covered.</p>
+            </div>
+
+            <ul class="walk-note__tags">
+              <li>Loose-leash</li>
+              <li>Look-at-that</li>
+              <li>Decompression sniffing</li>
+              <li>Stayed under threshold</li>
+            </ul>
+
+            <div class="walk-note__map">
+              <svg viewBox="0 0 400 150" role="img" aria-label="A stylised map of the walk route through the neighbourhood.">
+                <rect width="400" height="150" fill="#e6ecec"/>
+                <!-- streets -->
+                <g stroke="#ffffff" stroke-width="7" stroke-linecap="round" opacity="0.9">
+                  <path d="M0 46 H400"/><path d="M0 104 H400"/>
+                  <path d="M96 0 V150"/><path d="M232 0 V150"/><path d="M330 0 V150"/>
+                </g>
+                <!-- the reservoir -->
+                <rect x="248" y="56" width="66" height="38" rx="10" fill="#b4c3c6" opacity="0.75"/>
+                <!-- firs -->
+                <g fill="#7b8572" opacity="0.65">
+                  <path d="M40 128 l7 14 h-14 z"/><path d="M40 118 l6 12 h-12 z"/>
+                  <path d="M356 40 l7 14 h-14 z"/><path d="M356 30 l6 12 h-12 z"/>
+                  <path d="M150 24 l7 14 h-14 z"/>
+                </g>
+                <!-- the walked route -->
+                <path d="M56 128 C 56 104, 96 104, 96 76 S 150 46, 200 46 S 248 66, 280 75 S 330 104, 356 118"
+                      fill="none" stroke="#a05a3d" stroke-width="3" stroke-linecap="round" stroke-dasharray="7 6"/>
+                <!-- start + end -->
+                <circle cx="56" cy="128" r="6.5" fill="#2d4139"/>
+                <circle cx="56" cy="128" r="2.5" fill="#f7f2e9"/>
+                <circle cx="356" cy="118" r="6.5" fill="#a05a3d"/>
+                <circle cx="356" cy="118" r="2.5" fill="#f7f2e9"/>
+              </svg>
+            </div>
+
+            <p class="walk-note__sign">Every note is written by me, on the walk. &mdash; <em>Lily</em></p>
+          </figure>
+        </div>
+      </div>
+      <!-- Curve into the mist how-it-works band -->
+      <svg class="hill-divider" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <path style="fill: var(--mist-tint)" d="M0 64 L0 46 C360 8 1000 4 1440 40 L1440 64 Z"/>
+      </svg>
     </section>
 
     <!-- ============================================================
