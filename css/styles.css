@@ -74,10 +74,12 @@
 
   /* Type */
   --font-display: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
-  /* Body: Atkinson Hyperlegible Next — designed by the Braille Institute for maximum
-     legibility. Replaces the brand kit's auto-assigned Inter (never Lily's choice;
-     see pairing.json userOverrides.body=false). Cormorant Garamond is Lily's own pick. */
-  --font-body: "Atkinson Hyperlegible Next", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  /* Body: Newsreader — a text serif built for reading on screens (variable optical
+     sizing). Chosen to match the BRAND BOARDS, which set body copy in a serif —
+     the kit's pairing.json claims body:Inter, but its own showcase renders serif.
+     Inter was auto-assigned (userOverrides.body=false), never Lily's choice.
+     Display stays Cormorant Garamond, which Lily did choose. */
+  --font-body: "Newsreader", Georgia, "Iowan Old Style", serif;
 
   /* Fluid modular scale (~1.28 ratio at desktop) */
   --text-xs:   0.8125rem;                             /* 13px labels          */
@@ -106,6 +108,7 @@
   --radius-m: 14px;
   --radius-l: 22px;
   --radius-pill: 999px;
+  --radius-btn: 4px;   /* letterpress, not app-pill — buttons/skip-link */
 
   /* Elevation — soft, warm, barely-there */
   --shadow-s: 0 1px 2px rgba(45, 65, 57, 0.06), 0 2px 8px rgba(45, 65, 57, 0.05);
@@ -286,7 +289,7 @@ p { text-wrap: pretty; }
   gap: 0.5em;
   padding: 0.8em 1.7em;
   border: 1.5px solid transparent;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-btn);
   font-family: var(--font-body);
   font-weight: 600;
   font-size: var(--text-sm);
@@ -347,7 +350,7 @@ p { text-wrap: pretty; }
   padding: 0.75em 1.25em;
   background: var(--forest);
   color: var(--bg);
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-btn);
   font-weight: 600;
   text-decoration: none;
   transform: translateY(-300%);
