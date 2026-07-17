@@ -92,7 +92,7 @@
     <section class="page-hero">
       <div class="container">
         <h1>Say hello.</h1>
-        <p class="lede">The fastest way to reach me is a text. Tell me your dog&rsquo;s name, their breed or mix, and what&rsquo;s made walks hard before. No worries if it&rsquo;s hard to explain; I&rsquo;ve heard it all and there&rsquo;s no judgment here.</p>
+        <p class="lede">Fill out the form below and I&rsquo;ll be in touch. Tell me a bit about your dog: their name, what makes walks hard, and how they show it. No worries if it&rsquo;s hard to explain; I&rsquo;ve heard it all and there&rsquo;s no judgment here.</p>
       </div>
     </section>
 
@@ -105,56 +105,90 @@
         <div class="split__rail">
           <div class="contact-channels">
             <div class="contact-channel">
-              <p class="contact-channel__label">Text (fastest response)</p>
+              <p class="contact-channel__label">Prefer to reach out directly?</p>
               <p class="contact-channel__value"><a href="tel:+12066577315">206-657-7315</a></p>
-              <p class="contact-channel__hint">A quick text is the surest way to reach me.</p>
-            </div>
-            <div class="contact-channel">
-              <p class="contact-channel__label">Email</p>
               <p class="contact-channel__value"><a href="mailto:info@seattlesensitivedogs.com">info@seattlesensitivedogs.com</a></p>
+              <p class="contact-channel__hint">Text, call, or email. I&rsquo;ll follow up whichever way works for you.</p>
             </div>
           </div>
         </div>
 
         <div>
           <form class="form js-contact-form" action="https://formspree.io/f/mwvgvnjo" method="POST">
+            <input type="hidden" name="_subject" value="New meet-and-greet inquiry — Seattle Sensitive Dogs">
+
             <div class="form__row form__row--2col">
               <div class="form__field">
-                <label for="name">Your name</label>
-                <input type="text" id="name" name="name" autocomplete="name" required>
+                <label for="first_name">First name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="first_name" name="first_name" autocomplete="given-name" required>
               </div>
               <div class="form__field">
-                <label for="email">Email</label>
+                <label for="last_name">Last name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="last_name" name="last_name" autocomplete="family-name" required>
+              </div>
+            </div>
+
+            <div class="form__row form__row--2col">
+              <div class="form__field">
+                <label for="email">Email <span class="req" aria-hidden="true">*</span></label>
                 <input type="email" id="email" name="email" autocomplete="email" required>
               </div>
+              <div class="form__field">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel">
+              </div>
             </div>
+
+            <fieldset class="form__fieldset">
+              <legend class="form__legend">Preferred way to reach you <span class="req" aria-hidden="true">*</span></legend>
+              <div class="choice-row">
+                <label class="choice"><input type="radio" name="preferred_contact" value="Text" required> Text</label>
+                <label class="choice"><input type="radio" name="preferred_contact" value="Email"> Email</label>
+                <label class="choice"><input type="radio" name="preferred_contact" value="Phone call"> Phone call</label>
+              </div>
+            </fieldset>
 
             <div class="form__row form__row--2col">
               <div class="form__field">
-                <label for="dog_name">Dog&rsquo;s name</label>
-                <input type="text" id="dog_name" name="dog_name">
+                <label for="neighborhood">Your neighborhood <span class="req" aria-hidden="true">*</span></label>
+                <select id="neighborhood" name="neighborhood" required>
+                  <option value="" selected disabled>Select&hellip;</option>
+                  <option value="Maple Leaf">Maple Leaf</option>
+                  <option value="Roosevelt">Roosevelt</option>
+                  <option value="Wedgwood">Wedgwood</option>
+                  <option value="Ravenna">Ravenna</option>
+                  <option value="Fremont">Fremont</option>
+                  <option value="Wallingford">Wallingford</option>
+                  <option value="Other / not sure">Other / not sure</option>
+                </select>
               </div>
               <div class="form__field">
-                <label for="breed">Breed / mix</label>
-                <input type="text" id="breed" name="breed">
+                <label for="dog_name">Dog&rsquo;s name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="dog_name" name="dog_name" required>
               </div>
             </div>
 
-            <div class="form__field">
-              <label for="neighborhood">Neighborhood</label>
-              <select id="neighborhood" name="neighborhood">
-                <option value="Maple Leaf">Maple Leaf</option>
-                <option value="Roosevelt">Roosevelt</option>
-                <option value="Wedgwood">Wedgwood</option>
-                <option value="Ravenna">Ravenna</option>
-                <option value="Fremont">Fremont</option>
-                <option value="Wallingford">Wallingford</option>
-                <option value="Other / not sure">Other / not sure</option>
-              </select>
-            </div>
+            <fieldset class="form__fieldset">
+              <legend class="form__legend">Sensitive style</legend>
+              <p class="field-hint">Check anything that sounds like your dog &mdash; as many as apply.</p>
+              <div class="choice-subgroup">
+                <p class="choice-subgroup__title">Fearful / submissive</p>
+                <label class="choice"><input type="checkbox" name="sensitive_style" value="Shy"> Shy</label>
+                <label class="choice"><input type="checkbox" name="sensitive_style" value="Anxious"> Anxious</label>
+                <label class="choice"><input type="checkbox" name="sensitive_style" value="Urban stimuli (loud noises, moving vehicles)"> Urban stimuli (loud noises, moving vehicles)</label>
+                <label class="choice"><input type="checkbox" name="sensitive_style" value="Children and/or stranger apprehension"> Children and/or stranger apprehension</label>
+              </div>
+              <div class="choice-subgroup">
+                <p class="choice-subgroup__title">Fearful / aggressive</p>
+                <label class="choice"><input type="checkbox" name="sensitive_style" value="Leash-reactive"> Leash-reactive</label>
+                <label class="choice"><input type="checkbox" name="sensitive_style" value="Resource guarding"> Resource guarding</label>
+                <label class="choice"><input type="checkbox" name="sensitive_style" value="Prey drive"> Prey drive</label>
+                <label class="choice"><input type="checkbox" name="sensitive_style" value="Barking"> Barking</label>
+              </div>
+            </fieldset>
 
             <div class="form__field">
-              <label for="message">What&rsquo;s made walks hard before?</label>
+              <label for="message">Anything else you&rsquo;d like me to know?</label>
               <textarea id="message" name="message"></textarea>
             </div>
 
@@ -209,6 +243,13 @@
         <div class="site-footer__brand">
           <img src="./images/logo-white.svg" alt="Seattle Sensitive Dogs" width="136" height="145">
           <p class="site-footer__tagline">Trust builds at their pace.</p>
+          <!-- Credential badges: add PNGs to images/badges/ and uncomment as earned.
+          <ul class="footer-badges" aria-label="Certifications">
+            <li><img src="./images/badges/fear-free.png" alt="Fear Free Certified Professional" height="48"></li>
+            <li><img src="./images/badges/red-cross-pet-first-aid.png" alt="Red Cross Pet First Aid and CPR" height="48"></li>
+            <li><img src="./images/badges/force-free.png" alt="Force-Free" height="48"></li>
+          </ul>
+          -->
         </div>
         <nav class="site-footer__nav" aria-label="Footer">
           <h2>Explore</h2>
