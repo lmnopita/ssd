@@ -196,6 +196,17 @@ h4 { font-size: var(--text-h4); font-family: var(--font-body); font-weight: 600;
 /* Italic accent inside display headings — house style for one warm word */
 h1 em, h2 em, .brand__name em { font-style: italic; font-weight: 500; }
 
+/* Terracotta accent word inside a display heading — the brand's signature move,
+   lifted straight from the brand boards ("...at their pace." / "...help them
+   thrive from there."). Terracotta is display-only per the token rules, so this
+   is only ever used inside h1/h2 (large type). Never on body copy. */
+h1 .hl, h2 .hl { color: var(--terracotta); }
+
+/* Hand-drawn swoosh under a hero line — from the "Your dog's world is our
+   priority." board. Decorative only. */
+.swoosh { display: block; width: min(19rem, 62%); height: auto; margin-top: 0.2em; margin-bottom: var(--space-m); color: var(--terracotta); }
+.swoosh path { fill: none; stroke: currentColor; stroke-width: 5; stroke-linecap: round; }
+
 p { text-wrap: pretty; }
 
 .lede {
@@ -384,12 +395,12 @@ p { text-wrap: pretty; }
   text-decoration: none;
   color: var(--forest);
 }
-.brand__mark { width: 2.75rem; height: auto; flex: none; }
+.brand__mark { width: 3rem; height: auto; flex: none; }
 .brand__name {
   font-family: var(--font-display);
-  font-size: 1.375rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.005em;
   line-height: 1.1;
   white-space: nowrap;
 }
@@ -1160,7 +1171,7 @@ p { text-wrap: pretty; }
   z-index: 1;
   display: none;
 }
-@media (min-width: 86em) and (prefers-reduced-motion: no-preference) {
+@media (min-width: 80em) and (prefers-reduced-motion: no-preference) {
   .paw-trail { display: block; }
 }
 .paw-trail__paw {
