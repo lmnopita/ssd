@@ -211,10 +211,9 @@ p { text-wrap: pretty; }
 .section-heading > p { margin-top: var(--space-s); }
 .section-heading--center { margin-inline: auto; text-align: center; }
 
-/* Handwritten-adjacent flourish line (italic serif) — use sparingly */
+/* Flourish line (display serif accent) — use sparingly */
 .flourish {
   font-family: var(--font-display);
-  font-style: italic;
   font-size: var(--text-h4);
   color: var(--accent-strong);
 }
