@@ -55,12 +55,31 @@
           "description": "A 30-minute, no-commitment first meeting in a calm, neutral spot where your dog sets the pace.",
           "price": "35.00",
           "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "New-client starter",
+          "description": "Twelve solo walks for new clients, to be used within one month.",
+          "price": "500.00",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Ongoing weekly walks",
+          "description": "Ongoing solo walks with a minimum of three walks per week, billed weekly.",
+          "price": "130.00",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "130.00",
+            "priceCurrency": "USD",
+            "unitText": "WEEK"
+          }
         }
       ]
     }
   }
   </script>
-  <!-- Weekly Walk Partnership pricing is intentionally omitted from structured data until the numbers are final. Add Offers here once confirmed. -->
   <!-- /SEO -->
 </head>
 <body>
@@ -122,7 +141,7 @@
           <p class="flourish" style="margin-top: var(--space-m)">Where every relationship starts.</p>
         </div>
         <div class="prose reveal">
-          <p class="price-card__amount" style="margin-bottom: var(--space-s)"><!-- DRAFT-REVIEW: Lily to confirm meet-and-greet price -->$35<span class="price-card__per"> · 30 minutes, somewhere neutral</span></p>
+          <p class="price-card__amount" style="margin-bottom: var(--space-s)">$35<span class="price-card__per"> · 30 minutes, somewhere neutral</span></p>
           <p>Thirty minutes somewhere calm and neutral, no agenda. I meet your dog on their terms; there&rsquo;s no commitment. You&rsquo;ll see how I work; your dog decides how close they want to get. Afterward, a short note with my honest read on fit.</p>
           <p>If we&rsquo;re not the right match, I&rsquo;ll tell you honestly and suggest alternatives where I can.</p>
           <a class="btn btn-primary js-booking-cta" href="./contact.html" style="margin-top: var(--space-m)">Book a Meet-and-Greet <span class="arrow" aria-hidden="true">&rarr;</span></a>
@@ -163,7 +182,7 @@
           <article class="price-card reveal">
             <h3>New-client starter</h3>
             <p class="price-card__meta">Two weeks &middot; 12 walks</p>
-            <p class="price-card__amount"><!-- DRAFT-REVIEW: Lily to confirm starter price -->$500</p>
+            <p class="price-card__amount">$500</p>
             <p class="price-card__note">For new clients &middot; used within one month</p>
             <ul class="check-list">
               <li>Solo walk, never a group</li>
@@ -177,8 +196,8 @@
           <article class="price-card price-card--featured reveal">
             <p class="price-card__tag">The ongoing rhythm</p>
             <h3>Weekly relationship</h3>
-            <p class="price-card__meta"><!-- DRAFT-REVIEW: Lily to confirm minimum -->Minimum 3 walks per week</p>
-            <p class="price-card__amount"><!-- DRAFT-REVIEW: Lily to confirm weekly rate -->$130<span class="price-card__per"> / week</span></p>
+            <p class="price-card__meta">Minimum 3 walks per week</p>
+            <p class="price-card__amount">$130<span class="price-card__per"> / week</span></p>
             <p class="price-card__note">Additional walks welcome; we&rsquo;ll set the right schedule together</p>
             <ul class="check-list">
               <li>Solo walk, never a group</li>
